@@ -1,0 +1,5 @@
+gulp/node_modules
+gulp/package-lock.json
+.DS_Store
+.vscode/settings.json
+log.log

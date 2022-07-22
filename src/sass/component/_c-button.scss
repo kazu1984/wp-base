@@ -1,0 +1,10 @@
+@use "setting" as *;
+
+.c-button {
+  display: inline-block;
+  border-radius: 30px;
+}
+
+.c-button:hover {
+  opacity: .7;
+}

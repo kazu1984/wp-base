@@ -1,0 +1,125 @@
+@use "setting" as *;
+
+//----------------------------------------------
+// テキスト系
+//----------------------------------------------
+.c-form__text,
+.c-form__mail,
+.c-form__textarea {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  border-radius: 10px;
+  color: inherit;
+  font-family: inherit;
+  font-size: 1em;
+  padding: 0.4em 0.8em;
+  width: 100%;
+}
+
+.c-form__text:focus,
+.c-form__mail:focus,
+.c-form__textarea:focus {
+  border: 2px solid rgba(0, 0, 0, 0.32);
+  box-shadow: none;
+  outline: none;
+}
+
+.c-form__textarea {
+  height: 200px;
+  resize: vertical;
+}
+
+//----------------------------------------------
+// ボタン
+//----------------------------------------------
+.c-form__submit {
+  -webkit-appearance: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1em;
+  padding: 0.6em 2em;
+  text-decoration: none;
+}
+
+.c-form__submit:hover {
+  outline: none;
+}
+
+.c-form__submit::-moz-foucus-inner {
+  border: none;
+  padding: 0;
+}
+
+//----------------------------------------------
+// チェックボックス
+//----------------------------------------------
+.c-form__checkbox {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+}
+
+.c-form__checkbox + span {
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 0.2em 0;
+  padding: 0 0 0 1em;
+  position: relative;
+}
+
+.c-form__checkbox + span::before {
+  -webkit-transform: translateY(-50%);
+  background: #fff;
+  border: 1px solid $color-form-border;
+  border-radius: 2px;
+  content: "";
+  display: block;
+  height: 1em;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1em;
+}
+
+.c-form__checkbox:focus + span::before {
+  border: 2px solid $color-form-border;
+}
+
+.c-form__checkbox + span::after {
+  -webkit-transform: translateY(-50%) rotate(-45deg);
+  border-bottom: 3px solid $color-form-marker;
+  border-left: 3px solid $color-form-marker;
+  content: "";
+  display: block;
+  height: 0.6em;
+  left: 0;
+  margin-top: -0.2em;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+  transition: all 0.3s ease 0s;
+  width: 1em;
+}
+
+.c-form__checkbox:checked + span::after {
+  opacity: 1;
+}
+
+.c-form__checkbox-text {
+  margin-left: rem(5);
+}

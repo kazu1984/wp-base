@@ -1,0 +1,57 @@
+@use "setting" as *;
+
+html {
+  @media (max-width: 375px) {
+    font-size: vw(375, 16);
+  }
+
+  font-size: 16px;
+
+  @include mq("md") {
+    font-size: vw(strip-unit($inner), 16);
+  }
+
+  @media (min-width: $inner) {
+    font-size: 16px;
+  }
+}
+
+body {
+  font-family: $base-font-family;
+  color: $color-base-font-main;
+  background-color: $color-base-background-main;
+  line-height: 1.68;
+  letter-spacing: 0.06em;
+}
+
+body.is-fixed {
+  height: 100%;
+  overflow: hidden;
+}
+
+main {
+  flex: 1;
+}
+
+p {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+a[href^="tel:"] {
+  @include mq("md") {
+    pointer-events: none;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+}

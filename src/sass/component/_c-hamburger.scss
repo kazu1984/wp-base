@@ -1,0 +1,59 @@
+@use "setting" as *;
+
+.c-hamburger {
+  position: relative;
+  width: rem(50);
+  height: rem(50);
+  outline: none;
+  border-radius: 50%;
+  transition: all $transition;
+}
+
+.c-hamburger__line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: rem(35);
+  height: rem(2);
+  background-color: $color-base-font-main;
+  transition: inherit;
+}
+
+.c-hamburger__line::before,
+.c-hamburger__line::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  transition: inherit;
+}
+
+.c-hamburger__line::before {
+  top: rem(-10);
+}
+
+.c-hamburger__line::after {
+  top: rem(10);
+}
+
+// クリック時
+.c-hamburger[aria-expanded="true"] .c-hamburger__line {
+  background-color: transparent;
+}
+
+.c-hamburger[aria-expanded="true"] .c-hamburger__line::before,
+.c-hamburger[aria-expanded="true"] .c-hamburger__line::after {
+  top: 0;
+  background-color: $color-base-font-main;
+}
+
+.c-hamburger[aria-expanded="true"] .c-hamburger__line::before {
+  transform: rotate(45deg);
+}
+
+.c-hamburger[aria-expanded="true"] .c-hamburger__line::after {
+  transform: rotate(-45deg);
+}

@@ -1,0 +1,8 @@
+@use "setting" as *;
+
+.l-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 100vh;
+}

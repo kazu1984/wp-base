@@ -1,0 +1,28 @@
+@use "setting" as *;
+
+.p-gnav__item {
+  @include flexVerticalCenter();
+}
+
+.p-gnav__items {
+  @include flexVerticalCenter();
+}
+
+.p-gnav__items--circle {
+  width: rem(150);
+  height: rem(50);
+}
+
+.p-gnav__items--circle .p-gnav__link {
+  width: 100%;
+  justify-content: center;
+}
+
+.p-gnav__items + .p-gnav__items {
+  margin-left: rem(30);
+}
+
+.p-gnav__link {
+  @include flexVerticalCenter();
+}
+
