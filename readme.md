@@ -3,7 +3,7 @@
 ターミナルで gulp フォルダに移動
 -> npm i
 
-// test
+// test main
 
 起動
 -> npx gulp
